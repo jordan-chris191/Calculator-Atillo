@@ -65,5 +65,13 @@
     <ClInclude Include="SOE.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CoinChange.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PrimeFactor.h">
+      <Filter>Header Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

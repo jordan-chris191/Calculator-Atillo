@@ -140,11 +140,15 @@
     <ClInclude Include="EuclideanMenu.h" />
     <ClInclude Include="Fib.h" />
     <ClInclude Include="FibMenu.h" />
+    <ClInclude Include="CoinChange.h" />
     <ClInclude Include="mainMenu.h" />
     <ClInclude Include="mdasMenu.h" />
     <ClInclude Include="RSA.h" />
     <ClInclude Include="SOE.h" />
     <ClInclude Include="SOEMenu.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PrimeFactor.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
