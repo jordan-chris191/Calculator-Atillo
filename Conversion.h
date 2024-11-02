@@ -6,8 +6,6 @@
 #include <unordered_map>
 using namespace std;
 
-#define ll long long;
-
 bool isValidBinary(const string& str) {
 	for (char ch : str) {
 		if (ch != '0' && ch != '1' && ch != '.') {
@@ -26,6 +24,7 @@ bool isValidOctal(const string& str) {
 	return true;
 }
 
+// binary conversions
 void binaryToDecimal(string binary) {
 	int pointPos = binary.find('.');
 
@@ -72,7 +71,6 @@ void binaryToDecimal(string binary) {
 	cout << endl << "\nDecimal equivalent: " << decimalValue + fractionalValue << endl;
 	cout << "________________________________________________________________________________________________________________________\n";
 }
-
 void binaryToOctal(string binary) {
 	int pointPos = binary.find('.');
 
@@ -126,11 +124,9 @@ void binaryToOctal(string binary) {
 	cout << endl << "\nOctal equivalent: " << octal << endl;
 	cout << "________________________________________________________________________________________________________________________\n";
 }
-
 void binaryToHexadecimal(string binary) {
 	int pointPos = binary.find('.');
 
-	// Split the binary number into integer and fractional parts
 	string integerPart = (pointPos == string::npos) ? binary : binary.substr(0, pointPos);
 	string fractionalPart = (pointPos == string::npos) ? "" : binary.substr(pointPos + 1);
 
@@ -185,6 +181,7 @@ void binaryToHexadecimal(string binary) {
 	cout << "________________________________________________________________________________________________________________________\n";
 }
 
+// octal conversions
 void octalToBinary(const string& octal) {
 	unordered_map<char, string> octalToBinaryMap = {
 		{'0', "000"}, {'1', "001"}, {'2', "010"}, {'3', "011"},
@@ -198,13 +195,13 @@ void octalToBinary(const string& octal) {
 
 	cout << "________________________________________________________________________________________________________________________\n";
 	string binaryIntegerPart;
-	cout << "\nInteger part solution steps: ";
+	cout << "\nInteger part solution steps: \n";
 	for (char digit : integerPart) {
 		string binary = octalToBinaryMap[digit];
 		binaryIntegerPart += binary;
 		cout << digit << " (octal) = " << binary << " (binary)";
-		if (digit != integerPart.back()) {
-			cout << ", ";
+		if (digit != fractionalPart.back()) {
+			cout << endl;
 		}
 	}
 
@@ -215,7 +212,7 @@ void octalToBinary(const string& octal) {
 		binaryFractionalPart += binary;
 		cout << digit << " (octal) = " << binary << " (binary)";
 		if (digit != fractionalPart.back()) {
-			cout << ", ";
+			cout << endl;
 		}
 	}
 
@@ -227,7 +224,6 @@ void octalToBinary(const string& octal) {
 	cout << endl << "\nBinary equivalent: " << binary << endl;
 	cout << "________________________________________________________________________________________________________________________\n";
 }
-
 double octalToDecimal(string octal)
 {
 
@@ -265,7 +261,7 @@ double octalToDecimal(string octal)
 
 	return result;
 }
-
+//hex
 string decimalToHex(int dec) {
 	string hex = "";
 	while (dec > 0) {
@@ -277,10 +273,9 @@ string decimalToHex(int dec) {
 	reverse(hex.begin(), hex.end());
 	return hex.empty() ? "0" : hex;
 }
-
 string decimalFracToHex(double frac) {
 	string hex = "";
-	int precision = 5; 
+	int precision = 5;
 	while (frac > 0 && precision--) {
 		frac *= 16;
 		int intPart = static_cast<int>(frac);
@@ -290,7 +285,6 @@ string decimalFracToHex(double frac) {
 	}
 	return hex.empty() ? "0" : hex;
 }
-
 string octalToHexadecimal(string octal) {
 
 	double decimalValue = octalToDecimal(octal);
@@ -307,7 +301,11 @@ string octalToHexadecimal(string octal) {
 	return hexFracPart.empty() ? hexIntPart : hexIntPart + "." + hexFracPart;
 }
 
+// decimal conversions;
 string decimaltoBinary()
 {
 	return 0;
 }
+
+
+// hexadecimal conversions

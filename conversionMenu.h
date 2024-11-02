@@ -19,7 +19,7 @@ void numberSystemConversionMenu() {
         cin >> choice2;
 
         switch (choice2) {
-        case 1: 
+        case 1: // Binary Conversion
             system("cls");
             cout << "Enter Binary: ";
             cin >> binary;

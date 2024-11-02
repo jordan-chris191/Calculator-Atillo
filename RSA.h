@@ -1,5 +1,4 @@
 #pragma once
-
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
@@ -41,7 +40,7 @@ int generate_d(int e, int phiN) {
     int gcd = extended_gcd(e, phiN, x, y);
 
     if (gcd != 1) {
-        std::cerr << "No modular inverse exists for the given e and phiN!" << std::endl;
+        cerr << "No modular inverse exists for the given e and phiN!" << endl;
         return -1;
     }
 
@@ -62,7 +61,6 @@ int mod_exp(int base, int exp, int mod) {
     }
     return result;
 }
-
 bool is_prime(int n) {
     if (n <= 1) return false;
     if (n <= 3) return true;
@@ -73,8 +71,6 @@ bool is_prime(int n) {
     }
     return true;
 }
-
-// Function to generate a random prime number
 int generate_random_prime(int lower, int upper) {
     int prime;
     do {
@@ -97,29 +93,33 @@ void RSA()
     int d = generate_d(e, phi_n);
     int m;
 
-    std::cout << "Enter a message (plain text) to encrypt (must be less than n = " << n << "): ";
-    cin >> m;
-    std::cout << std::endl;
+    do
+    {
+        cout << "Enter a message (plain text) to encrypt (must be less than n = " << n << "): ";
+        cin >> m;
+        cout << endl;
 
-    if (m >= n) {
-        std::cerr << "Message must be less than n!" << std::endl;
-    }
+        if (m >= n) {
+            system("cls");
+            cerr << "Message must be less than n! Try Again." << endl;
+        }
+    } while (m >= n);
+   
 
-    std::cout << "RSA ALGORITHM" << std::endl << std::endl;
-    std::cout << "p = " << p << " and q = " << q << std::endl << std::endl;
-    std::cout << "Step 1. Compute n = p * q = " << p << " * " << q << " = " << n << std::endl << std::endl;
-    std::cout << "Step 2. Compute tot(n) = (p - 1) * (q - 1) = " << p - 1 << " * " << q - 1 << " = " << phi_n << std::endl << std::endl;
-    std::cout << "Step 3. Choose e such that 1 < e < tot(n) and e and tot(n) are coprime. Let e = " << e << std::endl << std::endl;
-    std::cout << "Step 4. Compute d such that (d * e) % tot(n) = 1. One solution is d = " << d << " [(" << d << " * " << e << ") % " << phi_n << " = 1]" << std::endl << std::endl;
-    std::cout << "Public Key (e, n) => (" << e << ", " << n << ")" << std::endl << std::endl;
-    std::cout << "Private Key (d, n) => (" << d << ", " << n << ")" << std::endl << std::endl;
+    cout << "p = " << p << " and q = " << q << endl << endl;
+    cout << "Step 1. Compute n = p * q = " << p << " * " << q << " = " << n << endl << endl;
+    cout << "Step 2. Compute tot(n) = (p - 1) * (q - 1) = " << p - 1 << " * " << q - 1 << " = " << phi_n << endl << endl;
+    cout << "Step 3. Choose e such that 1 < e < tot(n) and e and tot(n) are coprime. Let e = " << e << endl << endl;
+    cout << "Step 4. Compute d such that (d * e) % tot(n) = 1. One solution is d = " << d << " [(" << d << " * " << e << ") % " << phi_n << " = 1]" << endl << endl;
+    cout << "Public Key (e, n) => (" << e << ", " << n << ")" << endl << endl;
+    cout << "Private Key (d, n) => (" << d << ", " << n << ")" << endl << endl;
 
 
     int c = mod_exp(m, e, n);
-    std::cout << "The encryption of plain text = " << m << " is equal to cipher text = " << m << "^" << e << " % " << n << " = " << c << std::endl << std::endl;
+    cout << "The encryption of plain text = " << m << " is equal to cipher text = " << m << "^" << e << " % " << n << " = " << c << endl << endl;
 
     int decrypted_m = mod_exp(c, d, n);
-    std::cout << "The decryption of cipher text = " << c << " is equal to plain text = " << c << "^" << d << " % " << n << " = " << decrypted_m << std::endl;
+    cout << "The decryption of cipher text = " << c << " is equal to plain text = " << c << "^" << d << " % " << n << " = " << decrypted_m << endl;
 
     cout << "\nPress Enter to return to the menu...";
     cin.ignore();

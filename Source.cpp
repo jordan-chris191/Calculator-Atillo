@@ -3,10 +3,11 @@
 #include "conversionMenu.h"
 #include "mdasMenu.h"
 #include "bitwiseMenu.h"
-#include "EuclideanMenu.h"
 #include "encryptionMenu.h"
 #include "FibMenu.h"
 #include "SOEMenu.h"
+#include "GCDandLCM.h"
+#include "GreedyAlgorithms.h"
 using namespace std;
 
 int main()
@@ -30,33 +31,27 @@ int main()
 			  BitwiseMenu();
 			  break;
 		  case 4:
-			  //PrimeFactorMenu();
+			  FindGCDAndLCMMenu();
 			  break;
 		  case 5:
-			  //EgyptianFracMenu();
-			  break;
-		  case 6:
 			  FibMenu();
 			  break;
+		  case 6:
+			  //ModArithmeticMenu();
+			  break;
 		  case 7:
-			  //ModularMenu();
-			  break;
-		  case 8:
-			  EuclideanMenu();
-			  break;
-		  case 9:
 			  SOEMenu();
 			  break;
-		  case 10:
+		  case 8:
 			  EncryptionMenu();
 			  break;
-		  case 11:
-			  //GreedyAlgoMenu();
+		  case 9:
+			  GreedyAlgoMenu();
 			  break;
 		  default:
 			  break;
 		}
-	} while (choice1 != 12);
+	} while (choice1 != 0);
 	system("cls");
 	cout << "Bye :)";
 }
