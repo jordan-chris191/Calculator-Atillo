@@ -1,6 +1,5 @@
 #pragma once
-#include <iostream>
-using namespace std;
+#include "Libs.h"
 
 int fib(int n)
 {

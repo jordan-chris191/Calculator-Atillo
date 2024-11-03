@@ -1,13 +1,6 @@
 #pragma once
 
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <queue>
-#include <unordered_map>
-#include <iomanip>
-#include <string>
-using namespace std;
+#include "Libs.h"
 
 class MiceAndHoles {
 private:

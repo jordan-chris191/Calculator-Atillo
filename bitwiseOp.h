@@ -1,7 +1,6 @@
 #pragma once
-#include <iostream>
-#include <vector>
-#include <sstream>
+#include "Libs.h"
+
 using namespace std;
 
 bool validBinary(const string& str) {

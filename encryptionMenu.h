@@ -1,7 +1,7 @@
 #pragma once
-#include <iostream>
+#include "Libs.h"
 #include "RSA.h"
-using namespace std;
+
 void EncryptionMenu()
 {
 	int encryptchoice;

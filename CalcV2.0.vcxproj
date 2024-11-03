@@ -136,10 +136,10 @@
     <ClInclude Include="Conversion.h" />
     <ClInclude Include="conversionMenu.h" />
     <ClInclude Include="encryptionMenu.h" />
-    <ClInclude Include="EuclideanAlgo.h" />
-    <ClInclude Include="EuclideanMenu.h" />
     <ClInclude Include="Fib.h" />
     <ClInclude Include="FibMenu.h" />
+    <ClInclude Include="GreedyAlgorithms.h" />
+    <ClInclude Include="Libs.h" />
     <ClInclude Include="mainMenu.h" />
     <ClInclude Include="mdasMenu.h" />
     <ClInclude Include="RSA.h" />

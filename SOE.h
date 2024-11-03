@@ -1,6 +1,5 @@
 #pragma once
-#include <iostream>
-using namespace std;
+#include "Libs.h"
 
 bool prime(int n) {
     if (n <= 1) return false;

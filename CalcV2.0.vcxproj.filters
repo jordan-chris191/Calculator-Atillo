@@ -41,12 +41,6 @@
     <ClInclude Include="bitwiseOp.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="EuclideanMenu.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="EuclideanAlgo.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="encryptionMenu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -63,6 +57,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SOE.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GreedyAlgorithms.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Libs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,7 +1,6 @@
 #pragma once
-#include <iostream>
+#include "Libs.h"
 #include "bitwiseOp.h"
-using namespace std;
 
 void BitwiseMenu()
 {

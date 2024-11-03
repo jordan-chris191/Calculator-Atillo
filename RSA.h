@@ -1,8 +1,5 @@
 #pragma once
-#include <iostream>
-#include <cstdlib>
-#include <ctime>
-using namespace std;
+#include "Libs.h"
 
 int gcd(int a, int b) {
     while (b != 0) {

@@ -1,9 +1,5 @@
 #pragma once
-#include <cstdlib>
-#include <string>
-#include <cmath>
-#include <sstream>
-#include <unordered_map>
+#include "Libs.h"
 using namespace std;
 
 bool isValidBinary(const string& str) {

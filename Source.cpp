@@ -32,7 +32,7 @@ int main()
 			  break;
 		  case 4:
 			  FindGCDAndLCMMenu();
-			  break;
+			  break;	
 		  case 5:
 			  FibMenu();
 			  break;
