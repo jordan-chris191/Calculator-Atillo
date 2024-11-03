@@ -1,6 +1,6 @@
 #pragma once
 #include "Libs.h"
-#include "bitwiseOp.h"
+#include "BitwiseOp.h"
 
 void BitwiseMenu()
 {

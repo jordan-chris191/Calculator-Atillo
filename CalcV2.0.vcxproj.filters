@@ -20,34 +20,10 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Conversion.h">
+    <ClInclude Include="MdasMenu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="conversionMenu.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="mdasMenu.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BinaryMDAS.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="mainMenu.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="bitwiseMenu.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="bitwiseOp.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="encryptionMenu.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="RSA.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Fib.h">
+    <ClInclude Include="MainMenu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FibMenu.h">
@@ -56,13 +32,19 @@
     <ClInclude Include="SOEMenu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SOE.h">
+    <ClInclude Include="Libs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ConversionMenu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EncryptionMenu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GreedyAlgorithms.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Libs.h">
+    <ClInclude Include="BitwiseMenu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

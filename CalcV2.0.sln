@@ -5,6 +5,33 @@ VisualStudioVersion = 17.8.34309.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CalcV2.0", "CalcV2.0.vcxproj", "{F9E2B108-8AA5-4A05-BA02-3F431EB96C5A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Encryption Codes", "Encryption Codes", "{98866130-F5DB-4315-93A4-73C1FBB2EF59}"
+	ProjectSection(SolutionItems) = preProject
+		CeasarCipher.h = CeasarCipher.h
+		DiffieHellman.h = DiffieHellman.h
+		RSA.h = RSA.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bitwise Codes", "Bitwise Codes", "{B0B76C78-FB3E-4166-A47A-F4A82426A80F}"
+	ProjectSection(SolutionItems) = preProject
+		BitwiseMDAS.h = BitwiseMDAS.h
+		BitwiseMenu.h = BitwiseMenu.h
+		BitwiseOp.h = BitwiseOp.h
+		Conversion.h = Conversion.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Greedy Algorithm Codes", "Greedy Algorithm Codes", "{15CCA875-9727-4BE7-9D8F-5D9C80DD7AAA}"
+	ProjectSection(SolutionItems) = preProject
+		GreedyAlgorithms.h = GreedyAlgorithms.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Other Codes", "Other Codes", "{72F0F888-C970-41CF-9416-751F0EB5BCC9}"
+	ProjectSection(SolutionItems) = preProject
+		Fib.h = Fib.h
+		GCDandLCM.h = GCDandLCM.h
+		SOE.h = SOE.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64

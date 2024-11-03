@@ -130,20 +130,14 @@
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BinaryMDAS.h" />
-    <ClInclude Include="bitwiseMenu.h" />
-    <ClInclude Include="bitwiseOp.h" />
-    <ClInclude Include="Conversion.h" />
-    <ClInclude Include="conversionMenu.h" />
-    <ClInclude Include="encryptionMenu.h" />
-    <ClInclude Include="Fib.h" />
+    <ClInclude Include="BitwiseMenu.h" />
+    <ClInclude Include="ConversionMenu.h" />
+    <ClInclude Include="EncryptionMenu.h" />
     <ClInclude Include="FibMenu.h" />
     <ClInclude Include="GreedyAlgorithms.h" />
     <ClInclude Include="Libs.h" />
-    <ClInclude Include="mainMenu.h" />
-    <ClInclude Include="mdasMenu.h" />
-    <ClInclude Include="RSA.h" />
-    <ClInclude Include="SOE.h" />
+    <ClInclude Include="MainMenu.h" />
+    <ClInclude Include="MdasMenu.h" />
     <ClInclude Include="SOEMenu.h" />
   </ItemGroup>
   <ItemGroup>

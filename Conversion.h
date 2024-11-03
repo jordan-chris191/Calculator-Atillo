@@ -188,7 +188,6 @@ void octalToBinary(const string& octal) {
 	string integerPart = (pointPos == string::npos) ? octal : octal.substr(0, pointPos);
 	string fractionalPart = (pointPos == string::npos) ? "" : octal.substr(pointPos + 1);
 
-
 	cout << "________________________________________________________________________________________________________________________\n";
 	string binaryIntegerPart;
 	cout << "\nInteger part solution steps: \n";
@@ -196,19 +195,19 @@ void octalToBinary(const string& octal) {
 		string binary = octalToBinaryMap[digit];
 		binaryIntegerPart += binary;
 		cout << digit << " (octal) = " << binary << " (binary)";
-		if (digit != fractionalPart.back()) {
-			cout << endl;
-		}
+		cout << endl;
 	}
 
 	string binaryFractionalPart;
-	cout << "\n\nFractional part solution steps: ";
-	for (char digit : fractionalPart) {
-		string binary = octalToBinaryMap[digit];
-		binaryFractionalPart += binary;
-		cout << digit << " (octal) = " << binary << " (binary)";
-		if (digit != fractionalPart.back()) {
-			cout << endl;
+	if (!fractionalPart.empty()) {
+		cout << "\n\nFractional part solution steps: ";
+		for (char digit : fractionalPart) {
+			string binary = octalToBinaryMap[digit];
+			binaryFractionalPart += binary;
+			cout << digit << " (octal) = " << binary << " (binary)";
+			if (digit != fractionalPart.back()) {
+				cout << endl;
+			}
 		}
 	}
 
@@ -258,7 +257,8 @@ double octalToDecimal(string octal)
 	return result;
 }
 //hex
-string decimalToHex(int dec) {
+string decimalToHex(int dec) 
+{
 	string hex = "";
 	while (dec > 0) {
 		int remainder = dec % 16;
@@ -279,29 +279,124 @@ string decimalFracToHex(double frac) {
 		else hex += (intPart - 10 + 'A');
 		frac -= intPart;
 	}
+
 	return hex.empty() ? "0" : hex;
 }
 string octalToHexadecimal(string octal) {
 
 	double decimalValue = octalToDecimal(octal);
-
-
 	int intPart = static_cast<int>(decimalValue);
 	double fracPart = decimalValue - intPart;
-
-
 	string hexIntPart = decimalToHex(intPart);
-
 	string hexFracPart = decimalFracToHex(fracPart);
-
 	return hexFracPart.empty() ? hexIntPart : hexIntPart + "." + hexFracPart;
 }
 
 // decimal conversions;
-string decimaltoBinary()
-{
-	return 0;
+string decimalToBinary(int dec) {
+	string binaryIntPart = "";
+	if (dec == 0) {
+		binaryIntPart = "0";
+	}
+	else {
+		while (dec > 0) {
+			binaryIntPart += (dec % 2) + '0';
+			dec /= 2;
+		}
+		reverse(binaryIntPart.begin(), binaryIntPart.end());
+	}
+	return binaryIntPart;
 }
+string decimalFracToBinary(double frac) {
+	string binaryFracPart = "";
+	int precision = 5;  // Set precision for fractional part
 
+	while (frac > 0 && precision--) {
+		frac *= 2;
+		int intPart = static_cast<int>(frac);
+		binaryFracPart += intPart + '0';
+		frac -= intPart;
+	}
+	return binaryFracPart;
+}
+string convertDecimalToBinary(double decimal) {
+	int intPart = static_cast<int>(decimal);  // Extract integer part
+	double fracPart = decimal - intPart;      // Extract fractional part
+
+	// Convert both integer and fractional parts to binary
+	string binaryIntPart = decimalToBinary(intPart);
+	string binaryFracPart = decimalFracToBinary(fracPart);
+
+	// Combine integer and fractional parts
+	return binaryFracPart.empty() ? binaryIntPart : binaryIntPart + "." + binaryFracPart;
+}
+string decimalToOctal(double decimal) {
+	int intPart = static_cast<int>(decimal);  // Integer part of the number
+	double fracPart = decimal - intPart;       // Fractional part of the number
+
+	// Convert integer part to octal
+	string octalIntPart = "";
+	if (intPart == 0) {
+		octalIntPart = "0";
+	}
+	else {
+		while (intPart > 0) {
+			int remainder = intPart % 8;
+			octalIntPart += (remainder + '0');
+			intPart /= 8;
+		}
+		reverse(octalIntPart.begin(), octalIntPart.end());
+	}
+
+	// Convert fractional part to octal
+	string octalFracPart = "";
+	int precision = 5; // Set the precision for the fractional part
+	while (fracPart > 0 && precision--) {
+		fracPart *= 8;
+		int intPartOfFrac = static_cast<int>(fracPart);
+		octalFracPart += (intPartOfFrac + '0');
+		fracPart -= intPartOfFrac;
+	}
+
+	// Combine integer and fractional parts
+	return octalFracPart.empty() ? octalIntPart : octalIntPart + "." + octalFracPart;
+}
+string decimalToHex(double decimal) {
+	int intPart = static_cast<int>(decimal);  // Integer part of the number
+	double fracPart = decimal - intPart;      // Fractional part of the number
+
+	// Convert integer part to hexadecimal
+	string hexIntPart = "";
+	if (intPart == 0) {
+		hexIntPart = "0";
+	}
+	else {
+		while (intPart > 0) {
+			int remainder = intPart % 16;
+			if (remainder < 10)
+				hexIntPart += (remainder + '0');
+			else
+				hexIntPart += (remainder - 10 + 'A');
+			intPart /= 16;
+		}
+		reverse(hexIntPart.begin(), hexIntPart.end());
+	}
+
+	// Convert fractional part to hexadecimal
+	string hexFracPart = "";
+	int precision = 5;  // Set the precision for the fractional part
+	while (fracPart > 0 && precision--) {
+		fracPart *= 16;
+		int intPartOfFrac = static_cast<int>(fracPart);
+		if (intPartOfFrac < 10)
+			hexFracPart += (intPartOfFrac + '0');
+		else
+			hexFracPart += (intPartOfFrac - 10 + 'A');
+		fracPart -= intPartOfFrac;
+	}
+
+	// Combine integer and fractional parts
+	return hexFracPart.empty() ? hexIntPart : hexIntPart + "." + hexFracPart;
+}
 
 // hexadecimal conversions

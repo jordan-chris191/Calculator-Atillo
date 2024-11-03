@@ -1,6 +1,7 @@
 #pragma once
 #include "Libs.h"
 #include "RSA.h"
+#include "DiffieHellman.h"
 
 void EncryptionMenu()
 {
@@ -8,12 +9,11 @@ void EncryptionMenu()
 
 	do {
 		system("cls");
-		cout << "1. RSA Algorithm\n";
-		cout << "2. Ceasar Cipher Algorithm\n";
-		cout << "3. Diffie Hellman\n";
-		cout << "4. MD5";
-		cout << "5. SHA-1";
-		cout << "6. Exit\n";
+		cout << "1. RSA Encyrption\n";
+		cout << "2. Ceasar/Shift Cipher Encryption\n";
+		cout << "3. Diffie Hellman Encryption\n";
+		cout << "4. AES Encryption\n";
+		cout << "0. Exit\n";
 		cout << "Enter the number of you choice: "; cin >> encryptchoice;
 
 		switch (encryptchoice)
@@ -21,32 +21,22 @@ void EncryptionMenu()
 			case 1:
 				RSA();
 			break;
-
+			
 			case 2:
-				cout << "Not finish yet";
+				cout << "wala pa";
 			break;
 
 			case 3:
-				cout << "Not finish yet";
+				DH();
 			break;
 
 			case 4:
-				cout << "Not finish yet";
+				cout << "Wala pa";
 			break;
-
-			case 5:
-				cout << "Not finish yet";
-			break;
-
 			default:
 			break;
 
 		}
 
-	} while (encryptchoice != 6);
-
-
-
-
-
+	} while (encryptchoice != 0);
 }

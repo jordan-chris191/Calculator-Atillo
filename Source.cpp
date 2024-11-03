@@ -1,14 +1,12 @@
-#include <iostream>
-#include "mainMenu.h"
-#include "conversionMenu.h"
-#include "mdasMenu.h"
-#include "bitwiseMenu.h"
-#include "encryptionMenu.h"
+#include "MainMenu.h"
+#include "ConversionMenu.h"
+#include "MdasMenu.h"
+#include "BitwiseMenu.h"
+#include "EncryptionMenu.h"
 #include "FibMenu.h"
 #include "SOEMenu.h"
 #include "GCDandLCM.h"
 #include "GreedyAlgorithms.h"
-using namespace std;
 
 int main()
 {

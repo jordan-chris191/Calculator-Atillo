@@ -1,5 +1,4 @@
 #pragma once
-
 #include "Libs.h"
 
 class MiceAndHoles {
@@ -499,18 +498,33 @@ public:
         cout << "Enter the numerator and denominator of the fraction (e.g., 2 3 for 2/3): ";
         cin >> numerator >> denominator;
         system("cls");
-        cout << "Egyptian Fraction Representation of " << numerator << "/" << denominator << " is: ";
+
+        cout << "Egyptian Fraction Representation of " << numerator << "/" << denominator << " is:\n";
+
+        string result;
         while (numerator != 0) {
             int x = denominator / numerator + (denominator % numerator != 0);
-            cout << "1/" << x << " + ";
 
+            result += "1/" + to_string(x) + " + ";
+            cout << "1/" << x;
 
-            numerator = numerator * x - denominator;
-            denominator = denominator * x;
+            int newNumerator = numerator * x - denominator;
+            int newDenominator = denominator * x;
+
+            cout << " (Calculation: " << numerator << " * " << x << " - " << denominator << " = " << newNumerator;
+            cout << " / " << denominator << " * " << x << " = " << newDenominator << ")\n";
+
+            numerator = newNumerator;
+            denominator = newDenominator;
+
+            if (numerator != 0) {
+                cout << " + ";
+            }
         }
-        cout << "\b\b  \n";
-    }
+        result = result.substr(0, result.size() - 3);
 
+        cout << "\nFinal Egyptian Fraction Representation: " << result << "\n";
+    }
     void RunEF() {
         printEgyptianFraction();
     }
