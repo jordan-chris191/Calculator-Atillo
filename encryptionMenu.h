@@ -2,6 +2,7 @@
 #include "Libs.h"
 #include "RSA.h"
 #include "DiffieHellman.h"
+#include "CeasarCipher.h"
 
 void EncryptionMenu()
 {
@@ -23,7 +24,7 @@ void EncryptionMenu()
 			break;
 			
 			case 2:
-				cout << "wala pa";
+				CC();
 			break;
 
 			case 3:
